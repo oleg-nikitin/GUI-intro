@@ -5,6 +5,8 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class MyfirstWindow {
 
@@ -51,6 +53,11 @@ public class MyfirstWindow {
 		Vorname.setBounds(193, 99, 76, 21);
 		
 		Button btnVorname = new Button(shell, SWT.NONE);
+		btnVorname.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
 		btnVorname.setBounds(94, 99, 75, 25);
 		btnVorname.setText("Vorname");
 
