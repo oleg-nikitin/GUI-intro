@@ -41,7 +41,7 @@ public class TaschenrechnerGUI {
             }
         }
     }
- 
+
     /**
      * Create contents of the window.
      */
@@ -121,6 +121,24 @@ public class TaschenrechnerGUI {
         });
         Dividebtn.setBounds(349, 100, 75, 25);
         Dividebtn.setText("/");
+        
+        Button abtn = new Button(shell, SWT.NONE);
+        abtn.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                int ergebnis = Integer.parseInt(getErgebnis().getText());
+                int wert = Integer.parseInt(getZahl().getText());
+                //
+                ergebnis = ergebnis / wert;
+                //
+                getErgebnis().setText(Integer.toString(ergebnis));
+                getZahl().setText("");
+            }
+        });
+        abtn.setBounds(349, 100, 75, 25);
+        abtn.setText("1");
+ 
+
  
     }
     public Text getZahl() {
